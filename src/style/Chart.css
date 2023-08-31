@@ -1,0 +1,21 @@
+.chart {
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #f8dfff;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  height: 10rem;
+}
+
+@media screen and (min-width: 0px) and (max-width: 299px) {
+  .chart {
+    padding: 1rem 0rem;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 399px) {
+  .chart {
+    padding: 1rem 0.5rem;
+  }
+}

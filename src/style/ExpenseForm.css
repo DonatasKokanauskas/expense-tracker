@@ -1,0 +1,68 @@
+.new-expense__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.new-expense__control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.new-expense__control input {
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 20rem;
+  max-width: 100%;
+}
+
+.new-expense__actions {
+  text-align: right;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 0px) and (max-width: 299px) {
+  .new-expense__controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  .new-expense__control input {
+    width: 85vw;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 399px) {
+  .new-expense__controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  .new-expense__control input {
+    width: 75vw;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 549px) {
+  .new-expense__controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  .new-expense__control input {
+    width: 65vw;
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 750px) {
+  .new-expense__controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  .new-expense__control input {
+    width: 50vw;
+  }
+}
