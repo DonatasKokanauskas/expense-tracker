@@ -5,7 +5,7 @@ import ExpenseList from "./ExpenseList";
 import ExpensesChart from "./ExpensesChart";
 import "../../style/Expenses.css";
 
-const Expenses = ({ expenses }) => {
+const Expenses = ({ expenses, setExpenses }) => {
   const [filteredYear, setFilteredYear] = useState("2023");
 
   const filterChangeHandler = (selectedYear) => {
@@ -16,6 +16,14 @@ const Expenses = ({ expenses }) => {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
+  const removeHandler = (id) => {
+    setExpenses(() => {
+      const filteredExpenses = expenses.filter((expense) => expense.id !== id);
+      localStorage.setItem("expenses", JSON.stringify(filteredExpenses));
+      return filteredExpenses;
+    });
+  };
+
   return (
     <div>
       <Card className="expenses">
@@ -24,7 +32,10 @@ const Expenses = ({ expenses }) => {
           onChangeFilter={filterChangeHandler}
         />
         <ExpensesChart expenses={filteredExpenses} />
-        <ExpenseList filteredExpenses={filteredExpenses} />
+        <ExpenseList
+          filteredExpenses={filteredExpenses}
+          removeHandler={removeHandler}
+        />
       </Card>
     </div>
   );

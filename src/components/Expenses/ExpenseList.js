@@ -1,7 +1,7 @@
 import ExpenseItem from "./ExpenseItem";
 import "../../style/ExpenseList.css";
 
-const ExpenseList = ({ filteredExpenses }) => {
+const ExpenseList = ({ filteredExpenses, removeHandler }) => {
   return (
     <ul className="expenses-list">
       {filteredExpenses.length === 0 ? (
@@ -14,6 +14,7 @@ const ExpenseList = ({ filteredExpenses }) => {
               title={expense.title}
               amount={expense.amount}
               date={expense.date}
+              removeHandler={() => removeHandler(expense.id)}
             />
           );
         })

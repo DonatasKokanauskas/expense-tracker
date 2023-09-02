@@ -27,7 +27,9 @@ const ExpenseForm = ({ onSaveExpenseData, stopEditingHandler }) => {
       date: new Date(enteredDate),
     };
 
-    onSaveExpenseData(expenseData);
+    if (enteredTitle !== "" && enteredAmount !== "" && enteredDate !== "") {
+      onSaveExpenseData(expenseData);
+    }
 
     setEnteredTitle("");
     setEnteredAmount("");
